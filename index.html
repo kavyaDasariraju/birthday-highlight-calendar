@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Birthday Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title"><span>My</span> Special <span>Day</span></h1>
+
+      <div class="input-box">
+        <input type="date" id="dob" />
+        <button onclick="generateCalendar()">Show My Day 💖</button>
+      </div>
+
+      <h2 id="monthYear"></h2>
+
+      <div class="calendar">
+        <div class="days">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="dates" id="dates"></div>
+      </div>
+
+      <p id="quote"></p>
+      <p class="subtitle">A day that means the world 🌸</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

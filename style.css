@@ -1,0 +1,237 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #fddb92);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Card style (paper look) */
+.container {
+  background: linear-gradient(145deg, #fff6f0, #fceae4);
+  padding: 25px;
+  border-radius: 25px;
+  width: 360px;
+  text-align: center;
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.1),
+    -8px -8px 20px rgba(255, 255, 255, 0.7);
+  animation: fadeIn 1s ease;
+}
+
+/* Title */
+h1 {
+  font-family: "Georgia", serif;
+  font-weight: normal;
+  color: #5a4a42;
+}
+
+/* Input */
+input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+/* Button */
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #e8b4b8;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button hover */
+button:hover {
+  background: #d98c94;
+  transform: scale(1.08);
+}
+
+/* Ripple effect */
+button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+button:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Calendar */
+
+.calendar {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+}
+
+.days,
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+/* Hover */
+.dates div:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #f8d7da;
+}
+
+/* Birthday highlight */
+.birthday {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  color: white;
+  font-weight: bold;
+  position: relative;
+  animation: pop 0.4s ease;
+}
+
+/* Heart */
+.birthday::after {
+  content: "❤️";
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  font-size: 14px;
+  animation: heartbeat 1s infinite;
+}
+
+/* Quote */
+#quote {
+  margin-top: 15px;
+  font-style: italic;
+  color: #6d5c54;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+.title {
+  font-family: "Georgia", serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #5a4a42;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Highlight words */
+.title span {
+  color: #e8a0a6;
+  font-style: italic;
+}
+
+/* Subtle animation */
+.title {
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.subtitle {
+  font-size: 13px;
+  color: #9c8b84;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+.date {
+  position: relative; /* 🔥 REQUIRED for heart positioning */
+}
+.days,
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.dates div {
+  opacity: 0;
+  animation: fadeInUp 0.4s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
